@@ -1,1 +1,1 @@
-# DirectAdmintApi
+# DirectAdminApi
