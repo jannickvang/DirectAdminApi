@@ -94,7 +94,9 @@ class DirectAdmin
      */
     public function transformArrayToString(array $options): string
     {
-        $options['domain'] = $this->getDomain();
+        if (!isset($options['domain'])) {
+            $options['domain'] = $this->getDomain();
+        }
 
         $postString = '';
         foreach ($options as $name => $value) {
