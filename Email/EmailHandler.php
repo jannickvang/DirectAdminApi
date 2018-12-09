@@ -28,7 +28,7 @@ class EmailHandler
     }
 
     /**
-     * @return array
+     * @return array|null
      */
     public function getAll(): ?array
     {

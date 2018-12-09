@@ -92,7 +92,7 @@ class DirectAdmin
      * @param array $options
      * @return string
      */
-    public function transformArrayToString(array $options):string
+    public function transformArrayToString(array $options): string
     {
         $options['domain'] = $this->getDomain();
 
@@ -128,7 +128,7 @@ class DirectAdmin
      */
     private function resultToArray(string $result): array
     {
-        parse_str($result,$array);
+        parse_str($result, $array);
         return $array;
     }
 }
