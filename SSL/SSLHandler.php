@@ -6,6 +6,7 @@ namespace JannickVanG\DirectAdminApi\SSL;
 
 
 use JannickVanG\DirectAdminApi\DirectAdmin;
+use JannickVanG\DirectAdminApi\DirectAdminResponse;
 use JannickVanG\DirectAdminApi\Exceptions\SSL\DA_CannotExecuteYourRequestException;
 use JannickVanG\DirectAdminApi\Exceptions\SSL\DA_DomainNameArrayCannotBeEmptyExtension;
 
@@ -18,9 +19,15 @@ class SSLHandler
         $this->directAdmin = $directAdmin;
     }
 
+    /**
+     * @param array $domainNames
+     * @return DirectAdminResponse
+     * @throws DA_CannotExecuteYourRequestException
+     * @throws DA_DomainNameArrayCannotBeEmptyExtension
+     */
     public function createLetsencryptCertificate(array $domainNames)
     {
-        if (!$domainNames) {
+        if (empty($domainNames)) {
             throw new DA_DomainNameArrayCannotBeEmptyExtension();
         }
 

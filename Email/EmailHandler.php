@@ -30,7 +30,7 @@ class EmailHandler
     /**
      * @return array
      */
-    public function getAll(): array
+    public function getAll(): ?array
     {
         $options = array('action' => 'list');
         $result = $this->directAdmin->getArray('CMD_API_POP', $options);
