@@ -50,9 +50,9 @@ class DomainHandler
             'domain' => $domain->getDomainName(),
             'bandwidth' => $domain->getBandwidth(),
             'quota' => $domain->getQuota(),
-            'ssl' => $domain->isSsl() === true ? 'ON':'OFF',
-            'cgi' => $domain->isCgi() === true ? 'ON':'OFF',
-            'php' => $domain->isPhp() === true ? 'ON':'OFF',
+            'ssl' => $domain->isSsl() === true ? 'ON' : 'OFF',
+            'cgi' => $domain->isCgi() === true ? 'ON' :' OFF',
+            'php' => $domain->isPhp() === true ? 'ON' : 'OFF',
         );
 
         $response = $this->directAdmin->getDirectAdminResponse('CMD_API_DOMAIN', $options);
@@ -109,7 +109,7 @@ class DomainHandler
         $options = array(
             'action' => 'delete',
             'select0' => $domainName,
-            'contents' => $deleteContent === true ? 'yes':'no'
+            'contents' => $deleteContent === true ? 'yes' : 'no'
         );
 
         $response = $this->directAdmin->getDirectAdminResponse('CMD_API_SUBDOMAINS', $options);
